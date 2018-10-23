@@ -1,0 +1,466 @@
+<HTML>
+<HEAD>
+  <TITLE>Ruby on Rails-新手教學課程.html</TITLE>
+  <meta NAME = "GENERATOR"          CONTENT = "IHMC CmapTools vr. 4.12 ">
+  <meta NAME = "KEYWORDS"           CONTENT = "陳咨諺, 概念图, cmap, CmapTools, IHMC, Ruby on Rails-新手教學課程,  主題二、Ruby 基礎概念課程,  實作三、 簡易線上課程平台,  本單元為初階實作課程， 透過Rails內建的套件直接使用， 讓同學能快速熟悉RoR的程式環境。,  單元二、 Ruby 邏輯判斷與流程控制,  單元一、 Ruby 基礎運算與語法,  實作一、 我的食譜,  本單元主要是說明本課程為研究導向， 也會介紹Ruby on Rails與後續課程安排。,  本單元為中階實作課程， 從資料的模型建立、頁面打造到完整的CRUD過程， 最後整理程式碼，讓同學了解Rails強大的MVC架構 及學習整潔的程式碼撰寫。,  實作二、 我的備忘錄,  本單元為高階實作課程， 主要是資料庫的關聯實作及完成 使用者登入流程及照片檔案上傳功能， 讓同學真正時做出一套完整系統。,  主題三、實作練習課程,  單元一、 Ruby on Rails教學介紹,  補充：Rails深入探討,  主題一、課程介紹,  本單元主要著重於程式執行方法、 數學的四則運算及基本資料輸出應用。,  本單元主要著重於條件判斷、 迴圈及迭代的語法使用。,  Ruby on Rails-新手教學課程">
+  <meta NAME = "DESCRIPTION"        CONTENT = "此概念图以 IHMC CmapTools 创建, 内含信息有关于: Ruby on Rails-新手教學課程, 主題二、Ruby 基礎概念課程 分為 單元二、 Ruby 邏輯判斷與流程控制, 主題三、實作練習課程 包括 實作一、 我的食譜, Ruby on Rails-新手教學課程 包括 主題三、實作練習課程, 實作三、 簡易線上課程平台 說明 本單元為高階實作課程， 主要是資料庫的關聯實作及完成 使用者登入流程及照片檔案上傳功能， 讓同學真正時做出一套完整系統。, 實作一、 我的食譜 說明 本單元為初階實作課程， 透過Rails內建的套件直接使用， 讓同學能快速熟悉RoR的程式環境。, 實作二、 我的備忘錄 說明 本單元為中階實作課程， 從資料的模型建立、頁面打造到完整的CRUD過程， 最後整理程式碼，讓同學了解Rails強大的MVC架構 及學習整潔的程式碼撰寫。, Ruby on Rails-新手教學課程 包括 主題一、課程介紹, 本單元為中階實作課程， 從資料的模型建立、頁面打造到完整的CRUD過程， 最後整理程式碼，讓同學了解Rails強大的MVC架構 及學習整潔的程式碼撰寫。 延伸 補充：Rails深入探討, 本單元為高階實作課程， 主要是資料庫的關聯實作及完成 使用者登入流程及照片檔案上傳功能， 讓同學真正時做出一套完整系統。 延伸 補充：Rails深入探討, 單元一、 Ruby on Rails教學介紹 說明 本單元主要是說明本課程為研究導向， 也會介紹Ruby on Rails與後續課程安排。, 本單元為初階實作課程， 透過Rails內建的套件直接使用， 讓同學能快速熟悉RoR的程式環境。 延伸 補充：Rails深入探討, 主題二、Ruby 基礎概念課程 分為 單元一、 Ruby 基礎運算與語法, 單元二、 Ruby 邏輯判斷與流程控制 說明 本單元主要著重於條件判斷、 迴圈及迭代的語法使用。, 主題三、實作練習課程 包括 實作三、 簡易線上課程平台, 單元一、 Ruby 基礎運算與語法 說明 本單元主要著重於程式執行方法、 數學的四則運算及基本資料輸出應用。, 主題一、課程介紹 包括 單元一、 Ruby on Rails教學介紹, Ruby on Rails-新手教學課程 包括 主題二、Ruby 基礎概念課程, 主題三、實作練習課程 包括 實作二、 我的備忘錄">
+  <meta NAME = "AUTHOR"             CONTENT = "IHMC CmapTools">
+  <meta HTTP-EQUIV = "Content-Type" CONTENT = "text/html; charset = UTF-8">
+  <script LANGUAGE="JavaScript1.2">
+  <!--
+    //  PopUp --
+    //  Institute for Human and Machine Cognition, http://www.ihmc.us/
+    //  CmapTools, Version 4.11, http://cmap.ihmc.us/
+    //  Modify by: CmapTools Developers, cmapsupport@ihmc.us
+    //  Date: 12/14/2006
+
+    var IE = 0;
+    var IE4PC = 0;
+    var NS = 0;
+    var GECKO = 0;
+
+    var openpopups = new Array();
+
+    if (document.all) {                 // Internet Explorer Detected
+	   IE = true;	
+    }
+    else if (document.layers) {         // Netscape Navigator Detected
+	   NS = true;	
+    }
+    else if (document.getElementById) { // Netscape 6 Detected
+       GECKO = true;
+    }
+    else {
+	   alert("Unrecognized Browser Detected::\nSorry, your browser is not compatible.");
+    }
+
+    if (IE)
+    {
+	   OS = navigator.platform;
+	   VER = new String(navigator.appVersion);
+	   VER = VER.substr (0, VER.indexOf(" "));
+	   if ((VER < 4.8) && (OS == "Win32")) 
+	   {
+	       IE4PC = 1;
+	   }
+    }
+
+    function handleResize() {
+	    location.reload();
+	    return false;
+    }
+
+
+    if ((NS) && (navigator.platform == "MacPPC")) {
+	   window.captureEvents (Event.RESIZE);
+	   window.onresize = handleResize;
+    }
+
+    function openResource(event, resourcePath, resourceName, resourceType)
+    {
+	   var newwindow;
+
+       // Resource MIMETypes are enumerated as follows: 
+       // cMap     = Undefined
+       // Image    = 0
+       // Video    = 1
+       // Text     = 2
+       // Audio    = 3
+
+       popDown();
+
+	   switch (resourceType) 
+	   {
+	    case 0:     //Image
+                    newwindow = window.open (resourcePath,resourceName);
+                    newwindow.onBlur = newwindow.focus()
+                    var text ='<center><img src=\"';
+                    text += resourcePath;
+                    text +='\"> </center>';
+             break;
+		
+	    case 1:  text   // Video
+		     newwindow = window.open (resourcePath,resourceName);
+                     newwindow.onBlur = newwindow.focus()
+                     var text ='<embed src=\"';
+                     text += resourcePath;
+                     text +='\" autostart=true> </embed> ';
+             break;
+
+	    case 2:      // Text or Unknown 
+		     newwindow = window.open(resourcePath,resourceName);
+                     newwindow.onBlur = newwindow.focus()
+              break;
+
+	    case 3:       // Audio
+                    newwindow = window.open (resourcePath,resourceName);
+                    newwindow.onBlur = newwindow.focus()
+                    var text ='<embed src=\"';
+                    text += resourcePath;
+                    text +='\" autoplay=true> </embed> ';
+             break;
+
+	    case 4:
+                    newwindow = window.open(resourcePath,resourceName);
+                    newwindow.onBlur = newwindow.focus()
+	     break;
+	    }
+        return;
+    }
+
+
+
+    function popUpEvt(event, popupName)
+    {
+	popDown();
+
+	if (GECKO)
+	{
+	    document.getElementById(popupName).style.left = event.layerX;
+	    document.getElementById(popupName).style.top = event.layerY;
+	    document.getElementById(popupName).style.background = "#B3B3B3";
+	    document.getElementById(popupName).style.visibility = "visible";
+	    openpopups.push(popupName);
+	}
+	else if (NS) 
+	{
+	    document.layers[popupName].moveTo (event.pageX, event.pageY);
+	    document.layers[popupName].bgColor = "#B3B3B3";
+	    document.layers[popupName].visibility = "show";
+	    openpopups.push(popupName);
+	}
+	else // if (IE)
+	{
+	    window.event.cancelBubble = true;
+	    if (!IE4PC) {
+		document.all[popupName].style.backgroundColor = "#B3B3B3";
+	    }	
+	    document.all[popupName].style.left = window.event.clientX + document.body.scrollLeft;
+	    document.all[popupName].style.top = window.event.clientY + document.body.scrollTop;
+	    document.all[popupName].style.visibility = "visible";
+	    openpopups[openpopups.length] = popupName;
+	}
+	return false;
+    }
+
+    function popDown()
+    {
+	var popupname;
+	
+	for (var i = 0; i < openpopups.length; i++) 
+	{
+	    popupname = new String (openpopups[i]);      
+	    if (GECKO) {
+		document.getElementById(popupname).style.visibility = "hidden";
+	    }
+	    else if (NS) {
+		document.layers[popupname].visibility = "hide";
+	    }
+	    else {
+		document.all[popupname].style.visibility = "hidden";
+	    }
+	}
+	openpopups = new Array();
+	return;
+    }
+
+    function popDownNoGecko() 
+    {
+	var popupname;
+	for (var i = 0; i < openpopups.length; i++) 
+	{
+	    popupname = new String (openpopups[i]);      
+	    if (GECKO) {
+           //  document.getElementById(popupname).style.visibility = "hidden"; 
+	        return;   // erased for test purposes
+	    }  
+	    else if (NS) {
+	        document.layers[popupname].visibility = "hide";
+	    }
+	    else {
+	        document.all[popupname].style.visibility = "hidden";
+	    }
+	}
+	openpopups = new Array();
+        return;
+    }
+  //-->
+  </script>
+</HEAD>
+<BODY bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<noscript>
+  <table width=90% cellpadding=10>
+    <tr>
+      <td bgcolor=ff4447>
+        <font color=000000 size=+1 face="helvetica">
+        <h1>WARNING:</h1>
+        <b>JavaScript is turned OFF.  None of the links on this concept map will <br>
+           work until it is reactivated.
+          <p>
+            <a href="http://cmap.ihmc.us/docs/EnablingJavaScript.html">
+                            If you need help turning JavaScript On, click here.
+            </a>
+          </p>
+        </b>
+      </td>
+    </tr>
+  </table>
+此概念图以 IHMC CmapTools 创建, 内含信息有关于: Ruby on Rails-新手教學課程, 主題二、Ruby 基礎概念課程 分為 單元二、 Ruby 邏輯判斷與流程控制, 主題三、實作練習課程 包括 實作一、 我的食譜, Ruby on Rails-新手教學課程 包括 主題三、實作練習課程, 實作三、 簡易線上課程平台 說明 本單元為高階實作課程， 主要是資料庫的關聯實作及完成 使用者登入流程及照片檔案上傳功能， 讓同學真正時做出一套完整系統。, 實作一、 我的食譜 說明 本單元為初階實作課程， 透過Rails內建的套件直接使用， 讓同學能快速熟悉RoR的程式環境。, 實作二、 我的備忘錄 說明 本單元為中階實作課程， 從資料的模型建立、頁面打造到完整的CRUD過程， 最後整理程式碼，讓同學了解Rails強大的MVC架構 及學習整潔的程式碼撰寫。, Ruby on Rails-新手教學課程 包括 主題一、課程介紹, 本單元為中階實作課程， 從資料的模型建立、頁面打造到完整的CRUD過程， 最後整理程式碼，讓同學了解Rails強大的MVC架構 及學習整潔的程式碼撰寫。 延伸 補充：Rails深入探討, 本單元為高階實作課程， 主要是資料庫的關聯實作及完成 使用者登入流程及照片檔案上傳功能， 讓同學真正時做出一套完整系統。 延伸 補充：Rails深入探討, 單元一、 Ruby on Rails教學介紹 說明 本單元主要是說明本課程為研究導向， 也會介紹Ruby on Rails與後續課程安排。, 本單元為初階實作課程， 透過Rails內建的套件直接使用， 讓同學能快速熟悉RoR的程式環境。 延伸 補充：Rails深入探討, 主題二、Ruby 基礎概念課程 分為 單元一、 Ruby 基礎運算與語法, 單元二、 Ruby 邏輯判斷與流程控制 說明 本單元主要著重於條件判斷、 迴圈及迭代的語法使用。, 主題三、實作練習課程 包括 實作三、 簡易線上課程平台, 單元一、 Ruby 基礎運算與語法 說明 本單元主要著重於程式執行方法、 數學的四則運算及基本資料輸出應用。, 主題一、課程介紹 包括 單元一、 Ruby on Rails教學介紹, Ruby on Rails-新手教學課程 包括 主題二、Ruby 基礎概念課程, 主題三、實作練習課程 包括 實作二、 我的備忘錄
+
+</noscript>
+
+<map name="Ruby on Rails-新手教學課程.html">
+  <area shape="rect"
+        href="1SLRM3HQ8I24F5NSVI1MWIx-cmapIx-storable"
+        onClick="popUpEvt(event,'1SLRM3HQ8I24F5NSVI1MWIx-cmapIx-storable'); return false;"
+        coords="1596,258,1614,276">
+  <area shape="rect"
+        href="1SLRM3HQ8I24F5NSVI1MWItextIhtml"
+        onClick="popUpEvt(event,'1SLRM3HQ8I24F5NSVI1MWItextIhtml'); return false;"
+        coords="1579,258,1597,276">
+  <area shape="rect"
+        href="1SLRM0FJ8I8VWRJPI19DItextIhtml"
+        onClick="popUpEvt(event,'1SLRM0FJ8I8VWRJPI19DItextIhtml'); return false;"
+        coords="682,254,700,272">
+  <area shape="rect"
+        href="1SLRM0FJ8I8VWRJPI19DIx-cmapIx-storable"
+        onClick="popUpEvt(event,'1SLRM0FJ8I8VWRJPI19DIx-cmapIx-storable'); return false;"
+        coords="699,254,717,272">
+  <area shape="rect"
+        href="1SLRLY2LQI70TZSFI16GIx-cmapIx-storable"
+        onClick="popUpEvt(event,'1SLRLY2LQI70TZSFI16GIx-cmapIx-storable'); return false;"
+        coords="436,254,454,272">
+  <area shape="rect"
+        href="1SLRLY2LQI70TZSFI16GItextIhtml"
+        onClick="popUpEvt(event,'1SLRLY2LQI70TZSFI16GItextIhtml'); return false;"
+        coords="419,254,437,272">
+  <area shape="rect"
+        href="1SLRM1TBZI174FF3HI1JDItextIhtml"
+        onClick="popUpEvt(event,'1SLRM1TBZI174FF3HI1JDItextIhtml'); return false;"
+        coords="926,253,944,271">
+  <area shape="rect"
+        href="1SLRM1TBZI174FF3HI1JDIx-cmapIx-storable"
+        onClick="popUpEvt(event,'1SLRM1TBZI174FF3HI1JDIx-cmapIx-storable'); return false;"
+        coords="943,253,961,271">
+  <area shape="rect"
+        href="1SLRM31YVI1H50TK2I1L2ItextIhtml"
+        onClick="popUpEvt(event,'1SLRM31YVI1H50TK2I1L2ItextIhtml'); return false;"
+        coords="1242,255,1260,273">
+  <area shape="rect"
+        href="1SLRM31YVI1H50TK2I1L2Ix-cmapIx-storable"
+        onClick="popUpEvt(event,'1SLRM31YVI1H50TK2I1L2Ix-cmapIx-storable'); return false;"
+        coords="1259,255,1277,273">
+  <area shape="rect"
+        href="1SLRP39ZHI26FGCMHI7L1ItextIhtml"
+        onClick="popUpEvt(event,'1SLRP39ZHI26FGCMHI7L1ItextIhtml'); return false;"
+        coords="131,252,149,270">
+  <area shape="rect"
+        href="1SLRLSF2WIY8T3SQITZIx-cmapIx-storable"
+        onClick="popUpEvt(event,'1SLRLSF2WIY8T3SQITZIx-cmapIx-storable'); return false;"
+        coords="1253,584,1271,602">
+  <area shape="rect"
+        href="1SLRLQ36NILFQ8VBIKXItextIhtml"
+        onClick="popUpEvt(event,'1SLRLQ36NILFQ8VBIKXItextIhtml'); return false;"
+        coords="687,48,705,66">
+</map>
+
+<center>
+  <table width=* height=* cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td valign=center align=center>
+        <img USEMAP="#Ruby on Rails-新手教學課程.html"
+             SRC="Ruby on Rails-新手教學課程.jpg"
+             ALIGN=middle
+             BORDER=0
+             onClick=popDown();>
+      </td>
+    </tr>
+    <tr>
+      <td VALIGN=top ALIGN=right>
+        <table>
+          <tr>
+            <td ALIGN=right VALIGN=middle>
+              <map NAME="CmapToolsTrademark">
+                <area SHAPE="rect"
+                      href="http://cmap.ihmc.us/"
+                      onClick="openResource(event,'http://cmap.ihmc.us/', 0, 2); return false;"
+                      coords="1,1,210,50">
+              </map>
+            </td>
+          </tr>
+          <tr>
+            <td  ALIGN=right VALIGN=middle>
+              <img USEMAP="#CmapToolsTrademark"
+                   SRC="CmapToolsTrademark.gif" 
+                   ALT="IHMC Cmap Tools Trademark" width="210" height="50"
+                   ALIGN=middle
+                   BORDER=0>
+            </td>
+            <td VALIGN=middle>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</center>
+</BODY>
+</HTML>
+<div id="1SLRM3HQ8I24F5NSVI1MWIx-cmapIx-storable" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="實作三、簡易線上課程平台.html "TITLE="">
+      實作三、簡易線上課程平台
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SLRM3HQ8I24F5NSVI1MWItextIhtml" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="https://youtu.be/xdS1_D_2KJE "TITLE="">
+      Youtube-[Ruby on Rails]實作三、簡易線上課程平台
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SLRM0FJ8I8VWRJPI19DItextIhtml" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="https://youtu.be/PWWyN8XoGFo "TITLE="">
+      Youtube-[Ruby on Rails]Ruby邏輯判斷與流程控制
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SLRM0FJ8I8VWRJPI19DIx-cmapIx-storable" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="Ruby 邏輯判斷與流程控制.html "TITLE="">
+      Ruby 邏輯判斷與流程控制
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SLRLY2LQI70TZSFI16GIx-cmapIx-storable" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="Ruby基礎運算與語法.html "TITLE="">
+      Ruby基礎運算與語法
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SLRLY2LQI70TZSFI16GItextIhtml" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="https://youtu.be/P6lI4xTmSMY "TITLE="">
+      Youtube-[Ruby on Rails]Ruby基礎運算與語法
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SLRM1TBZI174FF3HI1JDItextIhtml" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="https://youtu.be/QJaj2ze8nBA "TITLE="">
+      Youtube-[Ruby on Rails]Cloud9 概念圖輔助教學 實作一、我的食譜
+      </a>
+      </td>
+    </tr>
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="https://youtu.be/Ljg2vtb2_Ok "TITLE="">
+      Youtube-註冊Cloud9
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SLRM1TBZI174FF3HI1JDIx-cmapIx-storable" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="實作一、我的食譜.html "TITLE="">
+      實作一、我的食譜
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SLRM31YVI1H50TK2I1L2ItextIhtml" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="https://youtu.be/9uGiUvKMUiE "TITLE="">
+      Youtube-[Ruby on Rails]實作二、我的備忘錄
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SLRM31YVI1H50TK2I1L2Ix-cmapIx-storable" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="實作二 我的備忘錄.html "TITLE="">
+      實作二 我的備忘錄
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SLRP39ZHI26FGCMHI7L1ItextIhtml" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="M10609209_陳咨諺概念圖融入線上程式教學平台之研究 .pptx "TITLE="">
+      M10609209_陳咨諺概念圖融入線上程式教學平台之研究 
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SLRLSF2WIY8T3SQITZIx-cmapIx-storable" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="Rails介紹.html "TITLE="">
+      Rails介紹
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SLRLQ36NILFQ8VBIKXItextIhtml" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="https://www.youtube.com/channel/UCG3K74xXkCJ2eJnVe2KpbEQ/videos?disable_polymer=1 "TITLE="">
+      Youtube上課影音
+      </a>
+      </td>
+    </tr>
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a href="https://olinelearning.herokuapp.com/ "TITLE="">
+      Olinelearning程式教學平台
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+

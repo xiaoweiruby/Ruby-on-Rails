@@ -1,0 +1,5 @@
+https://brew.sh/index_zh-tw.html
+[DEFAULT]
+BASEURL=https://brew.sh/index_zh-tw.html
+[InternetShortcut]
+URL=https://brew.sh/index_zh-tw.html

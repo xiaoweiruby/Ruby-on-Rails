@@ -1,0 +1,5 @@
+http://rubyinstaller.org/
+[DEFAULT]
+BASEURL=http://rubyinstaller.org/
+[InternetShortcut]
+URL=http://rubyinstaller.org/

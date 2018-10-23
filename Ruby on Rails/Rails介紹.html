@@ -1,0 +1,346 @@
+<HTML>
+<HEAD>
+  <TITLE>Rails介紹</TITLE>
+  <meta NAME = "GENERATOR"          CONTENT = "IHMC CmapTools vr. 4.12 ">
+  <meta NAME = "KEYWORDS"           CONTENT = "陳咨諺, 概念图, cmap, CmapTools, IHMC, Rails介紹,  Active Record,  View 視圖,  可以輕鬆儲存物件的特性與關係， 取出來的時候也不需要撰寫 SQL 語句， 總體上減少了與資料庫存取有關的程式碼,  Model 資料模型,  1. 重複使用已經寫好的程式碼 2. 維護程式碼更方便 3. 加強團隊合作,  1. 表示 Model 與資料。 2. 表示 Model 之間的關係。 3. 表示相關 Model 之間的繼承關係。 4. 持久化資料存入資料庫的驗證。 5. 以物件導向的風格操作資料庫。,  負責接收外部傳來的訊息， 進行資料的處理，指派工作。,  標準化的方式來命名跟 組織Controllers和Actions。,  採用 MVC軟體架構 (Model、View、Controller),  核心ㄧ、 使用Resource來當做識別的資源， 也就是使用一個URL網址來代表一個Resource,  負責資料的存取， 處理資料庫的操作。,  負責將資料傳遞給使用者 並呈現畫面。,  RESTful 路由設計,  將RESTful帶入Rails路由系統 簡化路由設定,  Controller 控制器,  採用 ORM 物件關聯映射框架,  是負責新增與操作需要持久 存在資料庫裡的資料。,  功能,  核心二、 同一個Resource則可以有 不同的Representations格式變化。,  核心精神 符合 REST principle">
+  <meta NAME = "DESCRIPTION"        CONTENT = "此概念图以 IHMC CmapTools 创建, 内含信息有关于: Rails介紹, Rails 介紹 包括 RESTful 路由設計, Rails 介紹 包括 採用 MVC軟體架構 (Model、View、Controller), 負責將資料傳遞給使用者 並呈現畫面。 優點 1. 重複使用已經寫好的程式碼 2. 維護程式碼更方便 3. 加強團隊合作, Rails 介紹 包括 Active Record, 負責接收外部傳來的訊息， 進行資料的處理，指派工作。 優點 1. 重複使用已經寫好的程式碼 2. 維護程式碼更方便 3. 加強團隊合作, View 視圖 是 負責將資料傳遞給使用者 並呈現畫面。, RESTful 路由設計 的 優點, 採用 MVC軟體架構 (Model、View、Controller) 分為 Controller 控制器, 是負責新增與操作需要持久 存在資料庫裡的資料。 包括 採用 ORM 物件關聯映射框架, 採用 MVC軟體架構 (Model、View、Controller) 分為 Model 資料模型, RESTful 路由設計 的 核心精神 符合 REST principle, 負責資料的存取， 處理資料庫的操作。 優點 1. 重複使用已經寫好的程式碼 2. 維護程式碼更方便 3. 加強團隊合作, 優點 包括 標準化的方式來命名跟 組織Controllers和Actions。, Active Record 是 是負責新增與操作需要持久 存在資料庫裡的資料。, Controller 控制器 是 負責接收外部傳來的訊息， 進行資料的處理，指派工作。, 核心精神 符合 REST principle 包括 核心二、 同一個Resource則可以有 不同的Representations格式變化。, 採用 MVC軟體架構 (Model、View、Controller) 分為 View 視圖, 是負責新增與操作需要持久 存在資料庫裡的資料。 包括 功能, 核心精神 符合 REST principle 包括 核心ㄧ、 使用Resource來當做識別的資源， 也就是使用一個URL網址來代表一個Resource, 功能 為 1. 表示 Model 與資料。 2. 表示 Model 之間的關係。 3. 表示相關 Model 之間的繼承關係。 4. 持久化資料存入資料庫的驗證。 5. 以物件導向的風格操作資料庫。">
+  <meta NAME = "AUTHOR"             CONTENT = "IHMC CmapTools">
+  <meta HTTP-EQUIV = "Content-Type" CONTENT = "text/html; charset = UTF-8">
+  <script LANGUAGE="JavaScript1.2">
+  <!--
+    //  PopUp --
+    //  Institute for Human and Machine Cognition, http://www.ihmc.us/
+    //  CmapTools, Version 4.11, http://cmap.ihmc.us/
+    //  Modify by: CmapTools Developers, cmapsupport@ihmc.us
+    //  Date: 12/14/2006
+
+    var IE = 0;
+    var IE4PC = 0;
+    var NS = 0;
+    var GECKO = 0;
+
+    var openpopups = new Array();
+
+    if (document.all) {                 // Internet Explorer Detected
+	   IE = true;	
+    }
+    else if (document.layers) {         // Netscape Navigator Detected
+	   NS = true;	
+    }
+    else if (document.getElementById) { // Netscape 6 Detected
+       GECKO = true;
+    }
+    else {
+	   alert("Unrecognized Browser Detected::\nSorry, your browser is not compatible.");
+    }
+
+    if (IE)
+    {
+	   OS = navigator.platform;
+	   VER = new String(navigator.appVersion);
+	   VER = VER.substr (0, VER.indexOf(" "));
+	   if ((VER < 4.8) && (OS == "Win32")) 
+	   {
+	       IE4PC = 1;
+	   }
+    }
+
+    function handleResize() {
+	    location.reload();
+	    return false;
+    }
+
+
+    if ((NS) && (navigator.platform == "MacPPC")) {
+	   window.captureEvents (Event.RESIZE);
+	   window.onresize = handleResize;
+    }
+
+    function openResource(event, resourcePath, resourceName, resourceType)
+    {
+	   var newwindow;
+
+       // Resource MIMETypes are enumerated as follows: 
+       // cMap     = Undefined
+       // Image    = 0
+       // Video    = 1
+       // Text     = 2
+       // Audio    = 3
+
+       popDown();
+
+	   switch (resourceType) 
+	   {
+	    case 0:     //Image
+                    newwindow = window.open (resourcePath,resourceName);
+                    newwindow.onBlur = newwindow.focus()
+                    var text ='<center><img src=\"';
+                    text += resourcePath;
+                    text +='\"> </center>';
+             break;
+		
+	    case 1:  text   // Video
+		     newwindow = window.open (resourcePath,resourceName);
+                     newwindow.onBlur = newwindow.focus()
+                     var text ='<embed src=\"';
+                     text += resourcePath;
+                     text +='\" autostart=true> </embed> ';
+             break;
+
+	    case 2:      // Text or Unknown 
+		     newwindow = window.open(resourcePath,resourceName);
+                     newwindow.onBlur = newwindow.focus()
+              break;
+
+	    case 3:       // Audio
+                    newwindow = window.open (resourcePath,resourceName);
+                    newwindow.onBlur = newwindow.focus()
+                    var text ='<embed src=\"';
+                    text += resourcePath;
+                    text +='\" autoplay=true> </embed> ';
+             break;
+
+	    case 4:
+                    newwindow = window.open(resourcePath,resourceName);
+                    newwindow.onBlur = newwindow.focus()
+	     break;
+	    }
+        return;
+    }
+
+
+
+    function popUpEvt(event, popupName)
+    {
+	popDown();
+
+	if (GECKO)
+	{
+	    document.getElementById(popupName).style.left = event.layerX;
+	    document.getElementById(popupName).style.top = event.layerY;
+	    document.getElementById(popupName).style.background = "#B3B3B3";
+	    document.getElementById(popupName).style.visibility = "visible";
+	    openpopups.push(popupName);
+	}
+	else if (NS) 
+	{
+	    document.layers[popupName].moveTo (event.pageX, event.pageY);
+	    document.layers[popupName].bgColor = "#B3B3B3";
+	    document.layers[popupName].visibility = "show";
+	    openpopups.push(popupName);
+	}
+	else // if (IE)
+	{
+	    window.event.cancelBubble = true;
+	    if (!IE4PC) {
+		document.all[popupName].style.backgroundColor = "#B3B3B3";
+	    }	
+	    document.all[popupName].style.left = window.event.clientX + document.body.scrollLeft;
+	    document.all[popupName].style.top = window.event.clientY + document.body.scrollTop;
+	    document.all[popupName].style.visibility = "visible";
+	    openpopups[openpopups.length] = popupName;
+	}
+	return false;
+    }
+
+    function popDown()
+    {
+	var popupname;
+	
+	for (var i = 0; i < openpopups.length; i++) 
+	{
+	    popupname = new String (openpopups[i]);      
+	    if (GECKO) {
+		document.getElementById(popupname).style.visibility = "hidden";
+	    }
+	    else if (NS) {
+		document.layers[popupname].visibility = "hide";
+	    }
+	    else {
+		document.all[popupname].style.visibility = "hidden";
+	    }
+	}
+	openpopups = new Array();
+	return;
+    }
+
+    function popDownNoGecko() 
+    {
+	var popupname;
+	for (var i = 0; i < openpopups.length; i++) 
+	{
+	    popupname = new String (openpopups[i]);      
+	    if (GECKO) {
+           //  document.getElementById(popupname).style.visibility = "hidden"; 
+	        return;   // erased for test purposes
+	    }  
+	    else if (NS) {
+	        document.layers[popupname].visibility = "hide";
+	    }
+	    else {
+	        document.all[popupname].style.visibility = "hidden";
+	    }
+	}
+	openpopups = new Array();
+        return;
+    }
+  //-->
+  </script>
+</HEAD>
+<BODY bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<noscript>
+  <table width=90% cellpadding=10>
+    <tr>
+      <td bgcolor=ff4447>
+        <font color=000000 size=+1 face="helvetica">
+        <h1>WARNING:</h1>
+        <b>JavaScript is turned OFF.  None of the links on this concept map will <br>
+           work until it is reactivated.
+          <p>
+            <a href="http://cmap.ihmc.us/docs/EnablingJavaScript.html">
+                            If you need help turning JavaScript On, click here.
+            </a>
+          </p>
+        </b>
+      </td>
+    </tr>
+  </table>
+此概念图以 IHMC CmapTools 创建, 内含信息有关于: Rails介紹, Rails 介紹 包括 RESTful 路由設計, Rails 介紹 包括 採用 MVC軟體架構 (Model、View、Controller), 負責將資料傳遞給使用者 並呈現畫面。 優點 1. 重複使用已經寫好的程式碼 2. 維護程式碼更方便 3. 加強團隊合作, Rails 介紹 包括 Active Record, 負責接收外部傳來的訊息， 進行資料的處理，指派工作。 優點 1. 重複使用已經寫好的程式碼 2. 維護程式碼更方便 3. 加強團隊合作, View 視圖 是 負責將資料傳遞給使用者 並呈現畫面。, RESTful 路由設計 的 優點, 採用 MVC軟體架構 (Model、View、Controller) 分為 Controller 控制器, 是負責新增與操作需要持久 存在資料庫裡的資料。 包括 採用 ORM 物件關聯映射框架, 採用 MVC軟體架構 (Model、View、Controller) 分為 Model 資料模型, RESTful 路由設計 的 核心精神 符合 REST principle, 負責資料的存取， 處理資料庫的操作。 優點 1. 重複使用已經寫好的程式碼 2. 維護程式碼更方便 3. 加強團隊合作, 優點 包括 標準化的方式來命名跟 組織Controllers和Actions。, Active Record 是 是負責新增與操作需要持久 存在資料庫裡的資料。, Controller 控制器 是 負責接收外部傳來的訊息， 進行資料的處理，指派工作。, 核心精神 符合 REST principle 包括 核心二、 同一個Resource則可以有 不同的Representations格式變化。, 採用 MVC軟體架構 (Model、View、Controller) 分為 View 視圖, 是負責新增與操作需要持久 存在資料庫裡的資料。 包括 功能, 核心精神 符合 REST principle 包括 核心ㄧ、 使用Resource來當做識別的資源， 也就是使用一個URL網址來代表一個Resource, 功能 為 1. 表示 Model 與資料。 2. 表示 Model 之間的關係。 3. 表示相關 Model 之間的繼承關係。 4. 持久化資料存入資料庫的驗證。 5. 以物件導向的風格操作資料庫。
+
+</noscript>
+
+<map name="Rails介紹">
+  <area shape="rect"
+        href="1SJ9JN28XI11LBKGMI111ItextIhtml"
+        onClick="popUpEvt(event,'1SJ9JN28XI11LBKGMI111ItextIhtml'); return false;"
+        coords="1621,144,1639,162">
+  <area shape="rect"
+        href="1SHPPD3BKIK8QH54INSItextIhtml"
+        onClick="popUpEvt(event,'1SHPPD3BKIK8QH54INSItextIhtml'); return false;"
+        coords="342,202,360,220">
+  <area shape="rect"
+        href="1SHPPD3BKIK8QH54INSIimage"
+        onClick="popUpEvt(event,'1SHPPD3BKIK8QH54INSIimage'); return false;"
+        coords="325,202,343,220">
+  <area shape="rect"
+        href="1SHPPWZNCILLFRFIXTItextIhtml"
+        onClick="popUpEvt(event,'1SHPPWZNCILLFRFIXTItextIhtml'); return false;"
+        coords="1044,185,1062,203">
+  <area shape="rect"
+        href="1SHPTZ9CCI271DK05I3QLIimage"
+        onClick="popUpEvt(event,'1SHPTZ9CCI271DK05I3QLIimage'); return false;"
+        coords="870,503,888,521">
+</map>
+
+<center>
+  <table width=* height=* cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td valign=center align=center>
+        <img USEMAP="#Rails介紹"
+             SRC="Rails介紹.jpg"
+             ALIGN=middle
+             BORDER=0
+             onClick=popDown();>
+      </td>
+    </tr>
+    <tr>
+      <td VALIGN=top ALIGN=right>
+        <table>
+          <tr>
+            <td ALIGN=right VALIGN=middle>
+              <map NAME="CmapToolsTrademark">
+                <area SHAPE="rect"
+                      href="http://cmap.ihmc.us/"
+                      onClick="openResource(event,'http://cmap.ihmc.us/', 0, 2); return false;"
+                      coords="1,1,210,50">
+              </map>
+            </td>
+          </tr>
+          <tr>
+            <td  ALIGN=right VALIGN=middle>
+              <img USEMAP="#CmapToolsTrademark"
+                   SRC="CmapToolsTrademark.gif" 
+                   ALT="IHMC Cmap Tools Trademark" width="210" height="50"
+                   ALIGN=middle
+                   BORDER=0>
+            </td>
+            <td VALIGN=middle>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</center>
+</BODY>
+</HTML>
+<div id="1SJ9JN28XI11LBKGMI111ItextIhtml" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a HREF="https://rails.ruby.tw/active_record_basics.html" TITLE="">
+      Active Record 基礎
+      </a>
+      </td>
+    </tr>
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a HREF="https://railsbook.tw/chapters/16-model-basic.html" TITLE="">
+      為你自己學Ruby on Rails-Model基本操作
+      </a>
+      </td>
+    </tr>
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a HREF="https://railsbook.tw/chapters/17-model-migration.html" TITLE="">
+      為你自己學Ruby on Rails-Model Migration
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SHPPD3BKIK8QH54INSItextIhtml" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a HREF="https://railsbook.tw/chapters/10-mvc.html" TITLE="">
+      為你自己學Ruby on Rails-Model、View、Controller 三分天下
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SHPPD3BKIK8QH54INSIimage" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a HREF="MVC.png" TITLE="">
+      MVC
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SHPPWZNCILLFRFIXTItextIhtml" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a HREF="https://railsbook.tw/chapters/11-routes.html" TITLE="">
+      為你自己學Ruby on Rails-Routes
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="1SHPTZ9CCI271DK05I3QLIimage" style="POSITION: absolute; Z-INDEX: 20; VISIBILITY: hidden; left: 0; top: 0;">
+  <table border=1 cellpadding=1 cellspacing=0 bgcolor="#dddddd">
+    <tr>
+      <td nowrap><font face="Geneva, Arial" size=2>
+      <a HREF="螢幕快照 2018-05-24 上午11.18.13.png" TITLE="">
+      respond_to
+      </a>
+      </td>
+    </tr>
+  </table>
+</div>
+

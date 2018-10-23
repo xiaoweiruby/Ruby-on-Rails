@@ -1,0 +1,5 @@
+https://www.google.com.tw/intl/zh-TW/chrome/
+[DEFAULT]
+BASEURL=https://www.google.com.tw/intl/zh-TW/chrome/
+[InternetShortcut]
+URL=https://www.google.com.tw/intl/zh-TW/chrome/
